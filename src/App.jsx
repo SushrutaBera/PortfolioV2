@@ -86,9 +86,9 @@ function App() {
 
       {/* Existing Home Section */}
       <section id="home" className="home">
-        <div className="intro">
+        <div className="intro AOS">
           <h1>Hi, I'm <span>Sushruta Bera</span></h1>
-          <div className="intro-text">
+          <div>
             <p>I’m a full-stack developer who enjoys building web apps.</p>
             <p>I work with Spring Boot, Express.js, and C/C++.</p>
             <p>I explore Unity, Blender, and data analysis with Python & R.</p>
