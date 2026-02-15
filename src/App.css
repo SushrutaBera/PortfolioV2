@@ -1,0 +1,359 @@
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  height: auto;
+  padding: 120px 40px 80px;
+  color: aliceblue;
+}
+
+body {
+  background-color: #0f172a;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: #0e275a;
+  color: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.navbar.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.navbar.hide {
+  transform: translateY(-120%);
+  opacity: 0;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #00ffff;
+}
+
+.home {
+  display: flex;
+  min-height: 100vh;
+  padding: 100px 40px 40px;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.intro {
+  flex: 1;
+  color: white;
+}
+
+.profile {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  padding-top: 50px;
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.photo {
+  flex: 3;
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+}
+
+.box {
+  background: #0e275a;
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+  flex: 1;
+}
+
+/* Projects Section Layout */
+#projects {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+  /* Space between project cards */
+  padding-bottom: 200px;
+  height: auto;
+  /* Allow section to grow with content */
+}
+
+/* The Vertical Line */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  top: 15%;
+  height: 75%;
+  background: #0e275a;
+  z-index: 1;
+}
+
+/* Individual Project Card Container */
+.project-item {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+/* The Circle on the line */
+.circle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: #00ffff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ffff;
+}
+
+.project-card {
+  width: 40%;
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.project-item:nth-child(odd) .project-card {
+  margin-right: 55%;
+}
+
+.project-item:nth-child(even) .project-card {
+  margin-left: 55%;
+}
+
+.AOS {
+  opacity: 0;
+  transition: all 0.8s ease-out;
+  transform: translateX(-50px);
+  filter: blur(5px);
+}
+
+.project-item:nth-child(even) .AOS {
+  transform: translateX(50px);
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateX(0) !important;
+}
+
+.github-link {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 8px 16px;
+  background-color: #00ffff;
+  /* Neon cyan to match your hover color */
+  color: #0f172a;
+  /* Dark background color for contrast */
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.github-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4);
+  color: #0f172a;
+  /* Keeps text dark on hover */
+}
+
+.about-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0f172a; /* Matches body */
+  height: auto;
+  min-height: 80vh;
+}
+
+.about-container {
+  max-width: 900px;
+  background: #1e293b;
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid #0e275a;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.about-content h2 {
+  font-size: 2.5rem;
+  color: #00ffff;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #cbd5e1;
+}
+
+.about-content strong {
+  color: #fff;
+}
+
+.personal-details {
+  display: flex;
+  flex-direction: row; /* This puts Hobbies below Education */
+  gap: 40px; 
+  margin-top: 30px;
+  border-top: 1px solid #00ffff33;
+  padding-top: 30px;
+}
+
+.education, .hobbies {
+  width: 100%;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.skill-badge {
+  background: #0e275a;
+  color: #00ffff;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  border: 1px solid #00ffff55;
+  transition: 0.3s;
+}
+
+.skill-badge:hover {
+  background: #00ffff;
+  color: #0e275a;
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 80vh;
+  padding: 100px 20px;
+}
+
+.contact-container h1 {
+  font-size: 3rem;
+  color: #00ffff;
+  margin-bottom: 20px;
+}
+
+.contact-container p {
+  max-width: 600px;
+  color: #cbd5e1;
+  margin-bottom: 40px;
+}
+
+.contact-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2x2 Grid */
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  border-color: #00ffff;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 255, 255, 0.1);
+}
+
+.icon {
+  font-size: 2rem;
+  background: #0e275a;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.contact-text {
+  text-align: left;
+}
+
+.contact-text h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #00ffff;
+}
+
+.contact-text p {
+  margin: 5px 0 0;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+/* Make it single column on mobile */
+@media (max-width: 600px) {
+  .contact-links {
+    grid-template-columns: 1fr;
+  }
+}
