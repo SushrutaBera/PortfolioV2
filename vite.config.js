@@ -8,5 +8,4 @@ export default defineConfig({
     port: 5000,
     strictPort: true
   },
-  base: '/PortfolioV2/',
 })
