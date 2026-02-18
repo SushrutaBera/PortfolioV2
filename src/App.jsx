@@ -74,6 +74,12 @@ function App() {
 
   return (
     <>
+      {/* Background */}
+      <div className="bg-animation">
+        <div className="blob blob-1"></div>
+        <div className="blob blob-2"></div>
+        <div className="blob blob-3"></div>
+      </div>
       <nav className={`navbar ${showNavbar ? "show" : "hide"}`}>
         <h2>My Portfolio</h2>
         <ul>
@@ -183,7 +189,7 @@ function App() {
           <div className="contact-links">
             {/* Email */}
             <a href="mailto:sushrutabera1502@gmail.com" className="contact-item">
-              <FaEnvelope className="icon"/>
+              <FaEnvelope className="icon" />
               <div className="contact-text">
                 <h3>Email</h3>
                 <p>sushrutabera1502@gmail.com</p>
@@ -192,7 +198,7 @@ function App() {
 
             {/* LinkedIn */}
             <a href="https://www.linkedin.com/in/sushruta-bera-372338254/" target="_blank" rel="noreferrer" className="contact-item">
-              <FaLinkedin className="icon"/>
+              <FaLinkedin className="icon" />
               <div className="contact-text">
                 <h3>LinkedIn</h3>
                 <p>Sushruta Bera</p>
@@ -201,7 +207,7 @@ function App() {
 
             {/* GitHub */}
             <a href="https://github.com/SushrutaBera" target="_blank" rel="noreferrer" className="contact-item">
-              <FaGithub className="icon"/>
+              <FaGithub className="icon" />
               <div className="contact-text">
                 <h3>GitHub</h3>
                 <p>github.com/SushrutaBera</p>
@@ -210,7 +216,7 @@ function App() {
 
             {/* Instagram */}
             <a href="https://www.instagram.com/sb_liminality" target="_blank" rel="noreferrer" className="contact-item">
-              <FaInstagram className="icon"/>
+              <FaInstagram className="icon" />
               <div className="contact-text">
                 <h3>Instagram</h3>
                 <p>@sb_liminality</p>
