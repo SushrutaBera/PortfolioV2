@@ -17,49 +17,62 @@ body {
 }
 
 
-/* Container for the background shapes */
+/* Container adjustment */
 .bg-animation {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Keeps it behind all content */
-  background-color: #0f172a; /* Your base body color */
+  z-index: -1;
+  background-color: #020617; /* Darker base makes the neons pop more */
   overflow: hidden;
 }
 
-/* Individual Blobs */
 .blob {
   position: absolute;
   width: 500px;
   height: 500px;
-  background: linear-gradient(180deg, rgba(0, 255, 255, 0.15) 0%, rgba(14, 39, 90, 0.2) 100%);
-  filter: blur(80px);
+  filter: blur(90px); /* Increased blur for a softer glow */
   border-radius: 50%;
   animation: move 25s infinite alternate;
+  mix-blend-mode: screen; /* This makes overlapping neons much more vibrant */
+  opacity: 0.6; /* Higher opacity for vibrancy */
 }
 
+/* Bright Neon Cyan */
 .blob-1 {
   top: -10%;
   left: -10%;
-  background: rgba(0, 255, 255, 0.1); /* Cyan glow */
+  background: rgba(0, 255, 255, 0.3); 
+  box-shadow: 0 0 100px rgba(0, 255, 255, 0.2);
 }
 
+/* Electric Purple/Deep Blue */
 .blob-2 {
   bottom: 10%;
   right: -5%;
-  background: rgba(14, 39, 90, 0.4); /* Dark blue glow */
+  background: rgba(99, 102, 241, 0.3); /* Indigo/Violet shift */
   animation-duration: 30s;
   animation-delay: -5s;
 }
 
+/* Your New Blob 3 - High Contrast Cyan/White */
 .blob-3 {
+  top: -30%;
+  right: 20%;
+  background: rgba(0, 255, 255, 0.25);
+  animation-duration: 15s;
+  animation-delay: 4s;
+}
+
+/* The moved Blob 4 - Deep Navy Glow */
+.blob-4 {
   top: 40%;
   left: 30%;
-  width: 300px;
-  height: 300px;
-  background: rgba(0, 255, 255, 0.05);
+  width: 400px;
+  height: 400px;
+  background: rgba(14, 39, 90, 0.6);
   animation-duration: 20s;
 }
 
@@ -238,6 +251,18 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
+.project-card h3 {
+  font-size: 1.8rem;
+  color: #01d2d2;
+  margin-bottom: 20px;
+}
+
+.project-card p {
+  font-size: 1.3rem;
+  color: #a5f2f2;
+  margin-bottom: 20px;
+}
+
 .project-item:nth-child(odd) .project-card {
   margin-right: 55%;
 }
@@ -354,6 +379,11 @@ body {
 .skill-badge:hover {
   background: #00ffff;
   color: #0e275a;
+  transform: translateY(-5px) scale(1.05); /* Lift and grow */
+  border-color: #ffffff;
+  /* Neon Shadow Glow */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6), 
+              0 0 40px rgba(0, 255, 255, 0.3);
 }
 
 #contact {

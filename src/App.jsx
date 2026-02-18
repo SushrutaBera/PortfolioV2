@@ -67,7 +67,7 @@ function App() {
     {
       id: 5,
       title: "Project Five",
-      desc: "GUI Calculator using JavaX",
+      desc: "GUI Calculator using Javax",
       github: "https://github.com/SushrutaBera/GUI-calculator-java"
     }
   ];
@@ -79,6 +79,7 @@ function App() {
         <div className="blob blob-1"></div>
         <div className="blob blob-2"></div>
         <div className="blob blob-3"></div>
+        <div className="blob blob-4"></div>
       </div>
       <nav className={`navbar ${showNavbar ? "show" : "hide"}`}>
         <h2>My Portfolio</h2>
@@ -165,7 +166,7 @@ function App() {
             <div className="circle"></div>
             <div className="project-card AOS">
               <h3>{project.title}</h3>
-              <p>{project.desc}</p>
+              <p><strong>{project.desc}</strong></p>
 
               {/* The GitHub Link */}
               <a
