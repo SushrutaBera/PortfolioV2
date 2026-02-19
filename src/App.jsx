@@ -83,6 +83,18 @@ function App() {
       </div>
       <nav className={`navbar ${showNavbar ? "show" : "hide"}`}>
         <h2>My Portfolio</h2>
+
+        {/* Hidden Checkbox*/}
+        <input type="checkbox" id="nav-checkbox" className="nav-checkbox" />
+
+        {/* Hamburger Icon*/}
+        <label htmlFor="nav-checkbox" className="hamburger">
+          <span className="line"></span>
+          <span className="line"></span>
+          <span className="line"></span>
+        </label>
+
+        {/* existing UL */}
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
@@ -91,7 +103,7 @@ function App() {
         </ul>
       </nav>
 
-      {/* Existing Home Section */}
+      {/* Home Section */}
       <section id="home" className="home">
         <div className="intro AOS">
           <h1>Hi, I'm <span>Sushruta Bera</span></h1>
@@ -185,7 +197,7 @@ function App() {
       <section id="contact" className="AOS">
         <div className="contact-container">
           <h1>Get In Touch</h1>
-          <p>Feel Free to reach out to me via any one of these sites.</p>
+          <p>Feel free to reach out to me via any one of these sites.</p>
 
           <div className="contact-links">
             {/* Email */}

@@ -4,10 +4,10 @@ html {
 
 section {
   height: auto;
-  padding: 80px 40px 60px; 
+  padding: 80px 40px 60px;
   color: aliceblue;
-  max-width: 1200px; 
-  margin: 0 auto; 
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 body {
@@ -25,7 +25,8 @@ body {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-color: #020617; /* Darker base makes the neons pop more */
+  background-color: #020617;
+  /* Darker base makes the neons pop more */
   overflow: hidden;
 }
 
@@ -33,18 +34,21 @@ body {
   position: absolute;
   width: 500px;
   height: 500px;
-  filter: blur(90px); /* Increased blur for a softer glow */
+  filter: blur(90px);
+  /* Increased blur for a softer glow */
   border-radius: 50%;
   animation: move 25s infinite alternate;
-  mix-blend-mode: screen; /* This makes overlapping neons much more vibrant */
-  opacity: 0.6; /* Higher opacity for vibrancy */
+  mix-blend-mode: screen;
+  /* This makes overlapping neons much more vibrant */
+  opacity: 0.6;
+  /* Higher opacity for vibrancy */
 }
 
 /* Bright Neon Cyan */
 .blob-1 {
   top: -10%;
   left: -10%;
-  background: rgba(0, 255, 255, 0.3); 
+  background: rgba(0, 255, 255, 0.3);
   box-shadow: 0 0 100px rgba(0, 255, 255, 0.2);
 }
 
@@ -52,7 +56,8 @@ body {
 .blob-2 {
   bottom: 10%;
   right: -5%;
-  background: rgba(99, 102, 241, 0.3); /* Indigo/Violet shift */
+  background: rgba(99, 102, 241, 0.3);
+  /* Indigo/Violet shift */
   animation-duration: 30s;
   animation-delay: -5s;
 }
@@ -80,10 +85,21 @@ body {
 
 /* Floating Animation */
 @keyframes move {
-  0% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -50px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.9); }
-  100% { transform: translate(0, 0) scale(1); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
 }
 
 .navbar {
@@ -132,6 +148,12 @@ body {
 
 .navbar ul li a:hover {
   color: #00ffff;
+}
+
+/* hiding the checkbox by default on desktop */
+.nav-checkbox,
+.hamburger {
+  display: none;
 }
 
 .home {
@@ -347,14 +369,16 @@ body {
 
 .personal-details {
   display: flex;
-  flex-direction: row; /* This puts Hobbies below Education */
-  gap: 40px; 
+  flex-direction: row;
+  /* This puts Hobbies below Education */
+  gap: 40px;
   margin-top: 30px;
   border-top: 1px solid #00ffff33;
   padding-top: 30px;
 }
 
-.education, .hobbies {
+.education,
+.hobbies {
   width: 100%;
 }
 
@@ -379,11 +403,12 @@ body {
 .skill-badge:hover {
   background: #00ffff;
   color: #0e275a;
-  transform: translateY(-5px) scale(1.05); /* Lift and grow */
+  transform: translateY(-5px) scale(1.05);
+  /* Lift and grow */
   border-color: #ffffff;
   /* Neon Shadow Glow */
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6), 
-              0 0 40px rgba(0, 255, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6),
+    0 0 40px rgba(0, 255, 255, 0.3);
 }
 
 #contact {
@@ -410,7 +435,8 @@ body {
 
 .contact-links {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2x2 Grid */
+  grid-template-columns: repeat(2, 1fr);
+  /* 2x2 Grid */
   gap: 20px;
   width: 100%;
   max-width: 800px;
@@ -458,34 +484,157 @@ body {
   color: #94a3b8;
 }
 
-/* Make it single column on mobile */
-@media (max-width: 600px) {
-  .contact-links {
-    grid-template-columns: 1fr;
-  }
-}
 
 @media (max-width: 768px) {
+
+  body, html {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
   section {
-    padding: 60px 20px 40px; /* Much tighter on mobile */
+    padding: 60px 20px 40px;
+    width: 100%;
+    box-sizing: border-box; /* Crucial: keeps padding inside the 100% width */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers everything horizontally */
+  }
+
+  /* Navbar */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #00ffff;
+    border-radius: 3px;
+    transition: 0.3s;
+  }
+
+  .navbar {
+    left: 20px;
+    right: 20px;
+    width: calc(100% - 40px);
+    box-sizing: border-box;
+  }
+
+  .navbar ul {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    /* Hidden off-screen */
+    width: 70%;
+    height: 100vh;
+    background: #0e275a;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s ease-in-out;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .navbar ul li {
+    margin: 20px 0;
+  }
+
+  /* When checkbox is checked, slide the menu in */
+  .nav-checkbox:checked~ul {
+    right: 0;
+  }
+
+  /* Turning hamburger into an 'X' when checked */
+  .nav-checkbox:checked~.hamburger .line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .nav-checkbox:checked~.hamburger .line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-checkbox:checked~.hamburger .line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Hiding the actual checkbox input */
+  .nav-checkbox {
+    display: none;
   }
 
   .home {
     flex-direction: column;
     text-align: center;
-    padding-top: 120px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+    padding-right: 18%;
+    min-height: auto;
+    gap: 70px;
+  }
+
+  .intro {
+    width: 100%;      
+    padding: 25px;     
+    margin: 0 auto;         
+  }
+
+  .profile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-section {
+    padding: 40px 20px;
+    padding-left: 4%; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-container {
+    width: 100%;           
+    max-width: 100%;      
+    padding: 25px;          
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .personal-details {
+    flex-direction: column;  /* Stack Education and Hobbies */
+    gap: 30px;
+    text-align: left;        
   }
 
   .project-card {
-    width: 80%; /* Cards take more width on mobile */
+    width: 80%;
+    /* Cards take more width on mobile */
+  }
+
+  .project-item {
+    justify-content: center;
+    width: 100%;
   }
 
   .project-item:nth-child(odd) .project-card,
   .project-item:nth-child(even) .project-card {
-    margin: 0; /* Center cards on mobile */
+    margin: 0;
+    /* Center cards on mobile */
   }
 
-  .timeline-line, .circle {
-    display: none; /* Hide timeline on small screens for clarity */
+  .timeline-line,
+  .circle {
+    display: none;
+    /* Hide timeline on small screens for clarity */
+  }
+
+  .contact-links {
+    grid-template-columns: 1fr;
   }
 }
